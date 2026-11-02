@@ -1,0 +1,55 @@
+# Local data and private inputs
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite-*
+data/
+*.zip
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.*
+secrets.*
+
+# Python environments, packages, and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest*/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend dependencies and build output
+node_modules/
+frontend/node_modules/
+dist/
+build/
+frontend/dist/
+*.tsbuildinfo
+
+# Local visual review captures and source-only assets
+frontend/review/
+frontend/*.png
+frontend/*.jpg
+frontend/*.jpeg
+frontend/*.webp
+/progress/
+
+# Local generated import reports
+reports/*curriculum_import_report*.json
+
+# Logs and temporary files
+*.log
+*.tmp

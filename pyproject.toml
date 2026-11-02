@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "first-principles-curriculum-explorer"
+version = "0.1.0"
+description = "Local-first data foundation for the First-Principles AI Curriculum Explorer"
+requires-python = ">=3.11"
+dependencies = [
+    "alembic>=1.13,<2",
+    "fastapi>=0.110,<1",
+    "pydantic>=2.6,<3",
+    "sqlalchemy>=2.0,<3",
+    "uvicorn>=0.54.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[tool.setuptools.packages.find]
+where = ["backend"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["backend"]
