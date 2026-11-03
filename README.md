@@ -2,6 +2,10 @@
 
 Atlas is a local-first application for exploring a curriculum as an interconnected knowledge map. Browse Tracks, Phases, and Topics; inspect objectives and prerequisite paths; and record learning status and confidence independently. Readiness is informative and does not restrict what you can study.
 
+## A look inside Atlas
+
+<img width="1200" height="760" alt="IMG_0731" src="https://github.com/user-attachments/assets/b7d15793-6225-4dec-8f3a-adf4cedebcba" />
+
 ## What the application includes
 
 - A React, TypeScript, and Vite web client.
