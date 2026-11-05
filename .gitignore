@@ -10,6 +10,8 @@
 *.sqlite-*
 data/
 *.zip
+!/curricula/
+!/curricula/*.zip
 *.pem
 *.key
 *.p12

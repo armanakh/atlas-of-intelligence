@@ -14,11 +14,20 @@ Atlas is a local-first application for exploring a curriculum as an interconnect
 - A validated curriculum ZIP importer and a read-only prerequisite evaluation engine.
 - Local learner progress, confidence, evidence, and progress history.
 
-The app does not require an account, cloud service, or hosted API for basic local use. The API and development frontend bind to loopback addresses by default. No curriculum archive is included in this repository.
+The app does not require an account, cloud service, or hosted API for basic local use. The API and development frontend bind to loopback addresses by default. A sanitized First-Principles AI Curriculum v3.0.0 package is included at `curricula/first-principles-ai-curriculum-v3.0.0.zip`. It contains 5 Tracks, 17 Phases and 334 Topics, with no learner progress or evidence records.
 
-## Current curriculum onboarding limitation
+## Choose and import a curriculum
 
 There is no curriculum authoring screen, package builder, CSV importer, or generic unvalidated JSON import. The current importer accepts a validated ZIP in the First-Principles curriculum package contract. To use another curriculum, prepare a ZIP that follows this contract and passes its validation rules; see [the import schema](backend/app/schemas/curriculum.py) and [the package validator](backend/app/importer.py).
+
+To use the included curriculum, keep its sanitized ZIP as your local import source and run the importer after initializing your database:
+
+~~~powershell
+$packagePath = "curricula/first-principles-ai-curriculum-v3.0.0.zip"
+uv run python -m app.importer $packagePath --report-out reports/curriculum_import_report.json
+~~~
+
+The package starts with every Topic unassessed. Importing it creates your local learner with no progress or evidence. Your subsequent assessments stay in your local database, which Git ignores.
 
 The ZIP must contain exactly these files:
 
