@@ -49,10 +49,10 @@ The importer creates a local learner when the database has none. It then imports
 
 ## Clone and install
 
-Replace the placeholder with the GitHub URL after the project is published.
+Clone the published repository:
 
 ~~~powershell
-git clone <repository-url> atlas-of-intelligence
+git clone https://github.com/armanakh/atlas-of-intelligence.git atlas-of-intelligence
 Set-Location atlas-of-intelligence
 uv sync --extra dev --locked
 Push-Location frontend
@@ -95,7 +95,7 @@ You can start the API and frontend with an empty database, but the map will have
 
 ## Import your curriculum and learner data
 
-Keep your ZIP outside the repository. From the repository root, substitute the path to your own compatible package:
+For a personal or custom curriculum package, keep your ZIP outside the repository. From the repository root, substitute its path here. The included sanitized sample package can be imported using the command in “Choose and import a curriculum” above:
 
 ~~~powershell
 $packagePath = "C:\path\to\your-curriculum-package.zip"
@@ -144,10 +144,10 @@ pnpm test:atlas
 pnpm build
 ~~~
 
-Tests that validate the complete curriculum archive are skipped when it is not present. To run those checks with your own compatible package, set its local path before running pytest:
+Integration tests that exercise a real curriculum package run when `ATLAS_TEST_CURRICULUM_PACKAGE` points to a compatible ZIP. To run them against the included sanitized sample, set its path before running pytest:
 
 ~~~powershell
-$env:ATLAS_TEST_CURRICULUM_PACKAGE = "C:\path\to\your-curriculum-package.zip"
+$env:ATLAS_TEST_CURRICULUM_PACKAGE = "curricula/first-principles-ai-curriculum-v3.0.0.zip"
 uv run --extra dev pytest -p no:cacheprovider
 ~~~
 
